@@ -17,7 +17,7 @@ export default {
     name: 'StateMap',
     data() {
         return {
-            state: {}
+            state: {},
         }
     },
     mounted() {
