@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted() {
-        this.state.name = this$route.params.state
+        this.state.name = this.$route.params.state
     }
 }
 </script>
