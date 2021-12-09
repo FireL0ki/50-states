@@ -1,16 +1,19 @@
 <template>
-    <div>
+    <div class="state-list-container">
         <!-- v-bind:key binds is a value that is unique for each individual object -->
-        <p v-for="state in states" v-bind:key="state.name"> 
-            {{ state.name }}
-        </p>
+        <div class="state-container" v-for="state in states" v-bind:key="state.name"> 
+            <state-detail v-bind:state="state"></state-detail>
+        </div>
     </div>
 </template>
 
 
 <script>
+import StateDetail from "./StateDetail.vue"
+
 
 export default {
+  components: { StateDetail },
     name: 'StateList',
     data() {
         return {
@@ -32,5 +35,15 @@ export default {
 
 
 <style scoped>
+
+.state-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.state-container {
+    margin: 1rem;
+}
 
 </style>
