@@ -17,6 +17,11 @@
         <p>Header image by 
             <a href="https://unsplash.com/photos/KpBXAOs80YI">@chrislawton on Unsplash</a>
         </p>  
+
+        <p><a target="_blank" href="https://icons8.com/icon/43632/map">Map icon</a> by 
+            <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
+
     </div>
 
 </template>
