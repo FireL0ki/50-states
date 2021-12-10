@@ -8,8 +8,8 @@
 
     <!-- todo map here -->
 
-    <div id="map-container">
-        <l-map v-bind:center="mapCenter" v-bind:zoom="state.zoom">
+    <div id="map-container" v-if="dataReady">
+        <l-map ref="map" v-on:ready="onMapReady" v-bind:center="mapCenter" v-bind:zoom="state.zoom">
             <l-tile-layer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution="$copy; OpenStreetMap contributors">
@@ -34,6 +34,8 @@ export default {
     data() {
         return {
             state: {},
+            dataReady: false,
+            mapReady: false
         }
     },
     mounted() {
@@ -44,7 +46,30 @@ export default {
         fetchStateData() {
             this.$stateService.getOneState(this.state.name).then( state => {
                 this.state = state
+                this.dataReady = true
+            }).catch( err => {
+                //404 not found
+                if ( err.response && err.response.status === 404 ) {
+                    this.state.name = '?' // TODO - better way to communicate this to user
+                } else {
+                    alert('Sorry, error fetching data about this state') // generic message for user
+                    console.error(err) // for the developer
+                }
             })
+        },
+        onMapReady() {
+            this.mapReady = true
+        },
+        setMapView() {
+            if (this.mapReady && this.dataReady) {
+                // TODO - make sure map shows correct part of world and zoom level
+                this.$ref.map.leafletObject.setView(this.mapCenter, this.zoom)
+            }
+        }
+    },
+    computed: {
+        mapCenter() {
+            return [ this.state.lat, this.state.lon ]
         }
     }
 }
