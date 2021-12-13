@@ -65,7 +65,7 @@ export default {
         },
         setMapView() {
             if (this.mapReady && this.dataReady) {
-                // TODO - make sure map shows correct part of world and zoom level
+                // make map shows correct part of world and zoom level
                 this.$ref.map.leafletObject.setView(this.mapCenter, this.zoom)
             }
         }
