@@ -6,7 +6,7 @@
     <p v-else>You have not visited this state yet</p>
 
 
-    <!-- todo map here -->
+    <!-- map here -->
 
     <div id="map-container" v-if="dataReady">
         <l-map ref="map" v-on:ready="onMapReady" v-bind:center="mapCenter" v-bind:zoom="state.zoom">
@@ -47,11 +47,14 @@ export default {
             this.$stateService.getOneState(this.state.name).then( state => {
                 this.state = state
                 this.dataReady = true
-            }).catch( err => {
-                //404 not found
-                if ( err.response && err.response.status === 404 ) {
-                    this.state.name = '?' // TODO - better way to communicate this to user
-                } else {
+                this.setMapView()
+            })
+            .catch( err => {
+                if ( err.response && err.response.status === 404 ) { //404 not found
+                    // this.state.name = '?' // need better way to communicate this to user
+                    // programatically navigate to the Not Found page
+                    this.$router.push({ name: 'NotFound' })
+                } else { // other error
                     alert('Sorry, error fetching data about this state') // generic message for user
                     console.error(err) // for the developer
                 }

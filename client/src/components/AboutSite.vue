@@ -2,8 +2,11 @@
     <div>
         <h2>Where have you traveled to?</h2>
 
-        <p>Use this site to keep track of which states you have traveled to</p>
+        <div class="about-information">
+        <p>Use this site to keep track of which states you have traveled.</p>
         <p>A Vue.js site by Loki</p>   
+        </div>
+
     </div>
 </template>
 
@@ -15,4 +18,9 @@ export default {
 
 
 <style scoped>
+
+.about-information {
+    text-align: center;
+}
+
 </style>
