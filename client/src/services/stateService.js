@@ -22,7 +22,7 @@ export default {
         })
     },
     // function to make request to the new API route for states Visited
-    getStatesVisited(state) {
-        return axios.get('')
+    getStatesVisited() {
+        // TODO
     }
 }
