@@ -3,14 +3,10 @@
     <div>
         <h2>You've Visited These States</h2>
 
-        <div class="states-visited-container">
-
                 <!-- TODO fix error -->
                 <p v-for="state in statesVisited" v-bind:key="state.name">
                     {{ state.name }}
                 </p>
-
-        </div>
 
     </div>
 
@@ -46,10 +42,5 @@ export default {
 
 
 <style scoped>
-
-.states-visited-container {
-    color: darkblue;
-    height: 10em; 
-}
 
 </style>
