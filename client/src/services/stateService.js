@@ -19,9 +19,9 @@ export default {
         })
     },
     // function to make request to the new API route for states Visited
-    // TODO -- how to only grab states visited?
+    // use the /statesvisited page/route that's already set up for the statesVisited page
     getVisited() {
-        return axios.get('/api/states').then (response => {
+        return axios.get('/api/statesvisited').then (response => {
             return response.data
         })
     }

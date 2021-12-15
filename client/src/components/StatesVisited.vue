@@ -16,7 +16,7 @@
 export default {
     name: 'StatesVisited',
     components: { 
-        
+        //needed?
     },
     data() {
         return {
@@ -24,8 +24,16 @@ export default {
         }
     },
     mounted() {
-        
+        this.getAllVisited()
+    },
+    methods: {
+        getAllVisited() {
+            this.$stateService.getVisited().then ( states => {
+                this.states = states
+        })
     }
+}
+
 }
 
 </script>

@@ -40,8 +40,8 @@ router.patch('/states/:name', function(req, res, next){
 }) 
 
 // add new route for states Visited
-// only return states where visited = true
-router.get('/states/:name', function(req, res, next){
+// connect the page route /statesvisited, that's already been set up
+router.get('/statesvisited', function(req, res, next){
     States.findAll( { where: { visited: true }} ).then( states => {
         return res.json(states)
     })
