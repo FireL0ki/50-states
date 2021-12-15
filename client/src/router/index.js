@@ -5,6 +5,8 @@ import StateMap from '@/components/StateMap'
 import NotFound from '@/components/NotFound' //connect the NotFound site page / component
 import StatesVisited from '@/components/StatesVisited' // connect states visited page
 
+// Connect all the pages together / create routes so they can be accessed by user
+
 export default createRouter({
     history: createWebHashHistory(),
     routes: [

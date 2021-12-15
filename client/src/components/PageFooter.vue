@@ -14,7 +14,7 @@
 
             <!-- Add in link to statesVisited -->
             <span class="nav-link">
-                <router-link to="/visited">All Visited States</router-link>
+                <router-link to="/statesvisited">All Visited States</router-link>
             </span>
 
         </div>

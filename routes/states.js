@@ -40,6 +40,11 @@ router.patch('/states/:name', function(req, res, next){
 }) 
 
 // add new route for states Visited
+router.get('/states/:name', function(req, res, next){
+    let stateName = req.params.name
+    let stateVisited = req.body.visited
 
+    
+})
 
 module.exports = router
