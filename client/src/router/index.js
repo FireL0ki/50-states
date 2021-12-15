@@ -26,17 +26,18 @@ export default createRouter({
             component: StateMap
         },
         {
+            // set up URL path for statesVisited page
+            path: '/statesvisited', // this does not need to match the routes/paths set up-- can be anything
+            name: 'StatesVisited',
+            component: StatesVisited
+        },
+        {
+            // this need to be LAST
             // https://next.router.vuejs.org/guide/essentials/dynamic-matching.html#catch-all-404-not-found-route
             // above link for more information on setting up 404 not found routes / regex for matching
-            path: '/:pathMatch(.*)*', // match anything that's not one of the other routes
+            path: '/:pathMatch(.*)*', // match anything that's not one of the other routes 
             name: 'NotFound',
             component: NotFound
         },
-        {
-            // set up URL path for statesVisited page
-            path: '/statesvisited',
-            name: 'StatesVisited',
-            component: StatesVisited
-        }
     ]
 })

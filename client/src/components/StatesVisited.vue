@@ -4,12 +4,11 @@
         <h2>You've Visited These States</h2>
 
         <div class="states-visited-container">
-            <ul>
-                <!-- Why is this not showing up? -->
-                <li v-for="state in statesVisited" v-bind:key="state.name"
-                    v-bind:state="state"
-                    v-on:get-all-visited="getAllVisited">WORDS {{ state }}</li>
-            </ul>
+
+                <!-- TODO fix error -->
+                <p v-for="state in statesVisited" v-bind:key="state.name">
+                    {{ state.name }}
+                </p>
 
         </div>
 
@@ -29,19 +28,21 @@ export default {
             statesVisited: [] // how do I get the array of statesVisited from the request getAllVisited()?
         }
     },
+    // make API request in mounted hook to get list of states visited 
+    //(like a main method-- code that runs when this is generated, when it first appears)
+    // lifecycle hooks - read up more
     mounted() {
-        this.getAllVisited()
+        // this code will run when the component is shown on screen
+        this.$stateService.getVisited().then ( statesVisited => {
+            this.statesVisited = statesVisited
+        }).catch(err => {
+            // human friendly error message
+            alert('Sorry, unable to fetch list of states you have visited')
+            // message for developer
+            console.log('error getting all the states', err )
+        })
     },
-    methods: {
-        getAllVisited() {
-            this.$stateService.getVisited().then ( states => {
-                this.states = states
-        }).catch( err => {
-                alert('Sorry, can\'t fetch states visited list')
-                console.error(err)
-            })
-        }
-    }
+
 }
 
 </script>

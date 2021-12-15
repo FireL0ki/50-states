@@ -4,7 +4,6 @@
         <h2>She's dead, Jim!</h2>
 
         <div id="home-link">
-
             <!-- Nav link + route name -->
             Would you like to go to the <router-link v-bind:to="{ name: 'StateList' }">home page?</router-link>
 

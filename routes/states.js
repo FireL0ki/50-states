@@ -39,11 +39,15 @@ router.patch('/states/:name', function(req, res, next){
         .catch( err => next(err))
 }) 
 
-// add new route for states Visited
+// add new route for statesVisited
 // connect the page route /statesvisited, that's already been set up
+// only want states where visited: true, good idea to order results
+// test in browser http://127.0.0.1:3000/api/statesvisited
+// select only states where visited = true
+// the SQL would look like: SELECT * FROM States WHERE visited = true ORDER BY name
 router.get('/statesvisited', function(req, res, next){
-    States.findAll( { where: { visited: true }} ).then( states => {
-        return res.json(states)
+    States.findAll( {order: ['name'], where: { visited: true }} ).then( statesVisited => {
+        return res.json(statesVisited)
     })
     .catch( err => next(err) )
 })

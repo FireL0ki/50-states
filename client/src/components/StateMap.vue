@@ -8,7 +8,7 @@
 
     <!-- map here -->
 
-    <div id="map-container" v-if="dataReady">
+    <div id="map-container" v-if="dataReady"> <!-- only show map if data is loaded/read -->
         <l-map ref="map" v-on:ready="onMapReady" v-bind:center="mapCenter" v-bind:zoom="state.zoom">
             <l-tile-layer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -51,7 +51,7 @@ export default {
             })
             .catch( err => {
                 if ( err.response && err.response.status === 404 ) { //404 not found
-                    // this.state.name = '?' // need better way to communicate this to user
+                    //this.state.name = '?' // need better way to communicate this to user
                     // programatically navigate to the Not Found page
                     this.$router.push({ name: 'NotFound' })
                 } else { // other error
