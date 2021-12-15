@@ -20,9 +20,6 @@
 <script>
 export default {
     name: 'StatesVisited',
-    components: { 
-        //needed?
-    },
     data() {
         return {
             statesVisited: [] // how do I get the array of statesVisited from the request getAllVisited()?
