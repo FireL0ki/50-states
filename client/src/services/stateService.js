@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { response } from 'express'
 
 export default {
     getAllStates() {
@@ -19,5 +20,9 @@ export default {
         return axios.get('/api/state/' + stateName).then( response => {
             return response.data
         })
+    },
+    // function to make request to the new API route for states Visited
+    getStatesVisited(state) {
+        return axios.get('')
     }
 }

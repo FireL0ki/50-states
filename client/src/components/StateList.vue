@@ -21,6 +21,7 @@
 
 
 <script>
+// import & make StateSummary & StateDetail pages accessible
 import StateDetail from "./StateDetail.vue"
 import StateSummary from "./StateSummary.vue"
 

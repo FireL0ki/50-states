@@ -3,6 +3,7 @@ import StateList from '@/components/StateList'
 import AboutSite from '@/components/AboutSite'
 import StateMap from '@/components/StateMap'
 import NotFound from '@/components/NotFound' //connect the NotFound site page / component
+import StatesVisited from '@/components/StatesVisited' // connect states visited page
 
 export default createRouter({
     history: createWebHashHistory(),
@@ -10,7 +11,7 @@ export default createRouter({
         {
             path: '/',
             name: 'StateList',
-            component: StateList,
+            component: StateList
         },
         {
             path: '/about',
@@ -28,6 +29,12 @@ export default createRouter({
             path: '/:pathMatch(.*)*', // match anything that's not one of the other routes
             name: 'NotFound',
             component: NotFound
+        },
+        {
+            // set up URL path for states Visited page
+            path: '/statesvisited',
+            name: 'StatesVisited',
+            component: StatesVisited
         }
     ]
 })

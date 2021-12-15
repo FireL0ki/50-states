@@ -12,6 +12,11 @@
                 <router-link to="/about">About this Site</router-link>
             </span>
 
+            <!-- Add in link to statesVisited -->
+            <span class="nav-link">
+                <router-link to="/visited">All Visited States</router-link>
+            </span>
+
         </div>
 
         <p>Header image by 

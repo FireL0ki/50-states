@@ -10,9 +10,7 @@ router.get('/states', function(req, res, next) {
     .catch( err => next(err) )
 })
 
-
-// Get all info about one state
-// state/California or state/Iowa
+// Get all info about one state -- > state/California or state/Iowa
 router.get('/state/:name', function(req, res, name) {
     let stateName = req.params.name
     States.findOne( {where: { name: stateName}})
@@ -27,7 +25,6 @@ router.get('/state/:name', function(req, res, name) {
 })
 
 // patch route to update a state - visited or not
-
 // this will match state / any state name
 router.patch('/states/:name', function(req, res, next){ 
     let stateName = req.params.name
@@ -43,5 +40,8 @@ router.patch('/states/:name', function(req, res, next){
         })
         .catch( err => next(err))
 }) 
+
+// add new route for states Visited
+
 
 module.exports = router
