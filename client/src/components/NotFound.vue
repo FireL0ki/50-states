@@ -6,7 +6,7 @@
         <div id="home-link">
 
             <!-- Nav link + route name -->
-            Would you like to <router-link v-bind:to="{ name: 'StateList' }">go to the home page?</router-link>
+            Would you like to go to the <router-link v-bind:to="{ name: 'StateList' }">home page?</router-link>
 
             <!-- or use the path directly -->
             <!-- Would you like to <router-link="/">go to the home page?</router-link> -->
@@ -27,6 +27,6 @@ export default {
 
 #home-link {
     margin: 3em;
-    color: blue;
+    color: maroon;
 }
 </style>
