@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { response } from 'express'
 
 export default {
     getAllStates() {
@@ -7,7 +6,6 @@ export default {
             return response.data
         })
     },
-
     setVisited(stateName, visited) {
         // example URL -- /api/states/Wisconsin
         let requestData = { visited: visited}
@@ -15,14 +13,13 @@ export default {
             return response.data
         })
     },
-
     getOneState(stateName) {
         return axios.get('/api/state/' + stateName).then( response => {
             return response.data
         })
-    },
-    // function to make request to the new API route for states Visited
-    getStatesVisited() {
-        // TODO
     }
+    // function to make request to the new API route for states Visited
+    // getStatesVisited() {
+    //     // TODO
+    // }
 }

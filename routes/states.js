@@ -9,7 +9,6 @@ router.get('/states', function(req, res, next) {
     })
     .catch( err => next(err) )
 })
-
 // Get all info about one state -- > state/California or state/Iowa
 router.get('/state/:name', function(req, res, name) {
     let stateName = req.params.name
@@ -20,8 +19,7 @@ router.get('/state/:name', function(req, res, name) {
             } else {
                 return res.status(404).send('State not found')
             }
-        })
-        .catch( err => next(err) )
+        }).catch( err => next(err) )
 })
 
 // patch route to update a state - visited or not
