@@ -9,7 +9,7 @@
     </div>
 
     <div>
-        <!-- /map/Iwoa or /map/Georgia -->
+        <!-- /map/Iowa or /map/Georgia -->
         <router-link v-bind:to=" {name: 'StateMap', params: {state: state.name } } ">
             <img class="map-icon" src="@/assets/map_icon.png">
         </router-link>

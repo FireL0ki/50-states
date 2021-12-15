@@ -33,7 +33,7 @@ export default createRouter({
             component: NotFound
         },
         {
-            // set up URL path for states Visited page
+            // set up URL path for statesVisited page
             path: '/statesvisited',
             name: 'StatesVisited',
             component: StatesVisited
